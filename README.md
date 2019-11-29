@@ -69,8 +69,8 @@ Details are in respective branch.
 
 ## Outputs
 
-* **_N/A_**
-
+* **_id_**
+* **_arn_**
 
 
 
