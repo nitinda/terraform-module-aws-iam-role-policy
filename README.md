@@ -46,7 +46,14 @@ To use this module, add the following call to your code:
 module "<layer>-iam-role-policy-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-iam-role-policy.git?ref=terraform-11/master"
 
+  providers = {
+    "aws"  = "aws.services"
+  }
 
+  ## IAM Role Policy
+  name_prefix = "iam-role-policy-serice"
+  policy      = "${var.iam_policy_document_json}"
+  role        = "${var.iam_role_id}"
 }
 ```
 ---
