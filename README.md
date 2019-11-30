@@ -21,10 +21,6 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-11/master_**
-
-* **_IAM Role Policy (Terraform 11 supported code)_**
-
 From branch : **_terraform-12/master_** *work in progress*
 
 * **_IAM Role Policy (Terraform 11 supported code - work in progres)_**
@@ -47,9 +43,16 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-iam-role-policy-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role-policy.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role-policy.git?ref=terraform-11/master"
 
+  providers = {
+    "aws"  = "aws.services"
+  }
 
+  ## IAM Role Policy
+  name_prefix = "iam-role-policy-serice"
+  policy      = var.iam_policy_document_json
+  role        = var.iam_role_id
 }
 ```
 ---
@@ -59,12 +62,13 @@ module "<layer>-iam-role-policy-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
+|         **_Variable_**          |          **_Description_**            |    **_Type_**    |
+|---------------------------------|---------------------------------------|------------------|
+| name_prefix                     | The name of the role policy           | string           |
+| policy                          | The policy document.                  | string           |
+| role                            | The IAM role to attach to the policy. | string           |
 
 
-
-Details are in respective branch.
 
 
 ## Outputs
