@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create IAM Role resources in AWS cloud provider..
+This module may be used to create **_IAM Role Policy_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.14 or newer.
+This module needs **_Terraform 0.11.14_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -20,12 +20,6 @@ This module deploys aws services details are in respective feature branches.
 ## Features Branches
 
 Below we are able to check the resources that are being created as part of this module call:
-
-From branch : **_terraform-11/master_**
-
-* **_IAM Role Policy (Terraform 11 supported code)_**
-
-
 
 ---
 
@@ -63,12 +57,11 @@ module "<layer>-iam-role-policy-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |          **_Description_**            |    **_Type_**    |
-|---------------------------------|---------------------------------------|------------------|
-| name_prefix                     | The name of the role policy           | string           |
-| policy                          | The policy document.                  | string           |
-| role                            | The IAM role to attach to the policy. | string           |
-
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name\_prefix_** | The name of the role policy | _string_ | **_Required_** |
+| **_policy_** | The policy document | _string_ | **_Required_** |
+| **_role_** | The IAM role to attach to the policy | _string_ | **_Required_** |
 
 
 
