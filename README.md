@@ -40,11 +40,11 @@ Below we are able to check the resources that are being created as part of this 
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-iam-role-policy-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role-policy.git?ref=terraform-11/master"
+module "iam_role_policy" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role-policy.git?ref=terraform-12/master"
 
   providers = {
-    "aws"  = "aws.services"
+    aws = aws.services
   }
 
   ## IAM Role Policy
