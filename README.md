@@ -1,43 +1,49 @@
-# Terraform Module Name: terraform-module-iam-role-policy
+# _Terraform Module Name: terraform-module-iam-role-policy_
 
 
-## General
+_Terraform Module for_ **_AWS IAM Role Policy_**
 
-This module may be used to create **_IAM Role Policy_**resources in AWS cloud provider....
 
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
+
+## _General_
+
+_This module may be used to create_ **_IAM Role Policy_** _resources in AWS cloud provider...._
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
-This module needs **_Terraform 0.12.18_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs_ **_Terraform 0.12.19_** _or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
-This module deploys aws services details are in respective feature branches.
 
 ---
 
-## Features Branches
+## _Features_
 
-Below we are able to check the resources that are being created as part of this module call:
+_Below we are able to check the resources that are being created as part of this module call:_
 
 * **_IAM Role Policy_**
 
 
 ---
 
-## Below are the resources that are launched by this module
+## _Usage_
 
-* **_IAM Role Policy_**
+## _Using this repo_
 
-
----
-
-## Usage
-
-## Using this repo
-
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
 module "iam_role_policy" {
@@ -55,16 +61,17 @@ module "iam_role_policy" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
-|:----|:----|-----:|-----:|
-| **_name\_prefix_** | The name of the role policy | _string_ | **_Required_** |
-| **_policy_** | The policy document | _string_ | **_Required_** |
-| **_role_** | The IAM role to attach to the policy | _string_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_name_** | _The name of the role policy. If omitted, Terraform will assign a random, unique name_ | _string_ | **_Optional_** | **_null_** |
+| **_name\_prefix_** | _Creates a unique name beginning with the specified prefix. Conflicts with name_ | _string_ | **_Optional_** | **_null_** |
+| **_policy_** | _The inline policy document. This is a JSON formatted string_ | _string_ | **_Required_** |
+| **_role_** | _The IAM role to attach to the policy_ | _string_ | **_Required_** |
 
 
 
